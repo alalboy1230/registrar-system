@@ -1,6 +1,6 @@
 import Axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
+import { axiosInstance } from "../../config";
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
@@ -20,8 +20,8 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (username, password) => {
-    const res = await Axios.post(
-      "https://registrar-online-appointment-gsko.onrender.com/api/auth/login",
+    const res = await axiosInstance.post(
+      "/auth/login",
       {
         username,
         password,
@@ -35,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [currentUser]);
 
   const logout = async (username, password) => {
-    await Axios.post("http://localhost:3001/api/auth/logout");
+    await Axios.axiosInstance("http://localhost:3001/api/auth/logout");
     setCurrentUser(null);
   };
 
