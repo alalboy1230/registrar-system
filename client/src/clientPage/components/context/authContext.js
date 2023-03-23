@@ -20,10 +20,13 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (username, password) => {
-    const res = await Axios.post("http://localhost:3001/api/auth/login", {
-      username,
-      password,
-    });
+    const res = await Axios.post(
+      "https://registrar-online-appointment-gsko.onrender.com/api/auth/login",
+      {
+        username,
+        password,
+      }
+    );
     setCurrentUser(res.data);
   };
 
