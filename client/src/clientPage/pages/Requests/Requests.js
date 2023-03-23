@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 import { CgClose } from "react-icons/cg";
 import HDprofile from "../../components/HDprofile/HDprofile";
 import { useLocation } from "react-router-dom";
-
+import { axiosInstance, AxiosInstance } from "../../config";
 // import { Carousel } from "react-responsive-carousel";
 // import { BsCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
 export default function Requests() {
@@ -73,21 +73,21 @@ export default function Requests() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res1 = await axios.get(
+        const res1 = await axiosInstance.get(
           "http://localhost:3001/api/request/allrequest"
         );
         setValidateCFRD(res1.data);
 
-        const res2 = await axios.get(
+        const res2 = await axiosInstance.get(
           "http://localhost:3001/api/request/getRequestHd"
         );
         setUserRequestHd(res2.data);
-        const res4 = await axios.get(
+        const res4 = await axiosInstance.get(
           "http://localhost:3001/api/request/getRequestValidating"
         );
         setRequestCFRD(res4.data);
 
-        const res6 = await axios.get(
+        const res6 = await axiosInstance.get(
           "http://localhost:3001/api/request/getRequestHDValidating"
         );
         setRequestHD(res6.data);
