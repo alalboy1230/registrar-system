@@ -67,7 +67,7 @@ export default function Stats() {
     const fetchData = async () => {
       try {
         const res = await axiosInstance.get(
-          "http://localhost:3001/api/status/pending",
+          "/status/pending",
           {
             userID: currentUser?.User_ID || 0,
           }
@@ -79,7 +79,7 @@ export default function Stats() {
 
       try {
         const res = await axiosInstance.post(
-          "http://localhost:3001/api/status/months",
+          "/status/months",
           {
             userID: currentUser.User_ID,
           }
