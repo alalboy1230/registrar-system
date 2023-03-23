@@ -7,9 +7,9 @@ import adminStatusRoutes from "../server/admin/adminRoutes/adminStatus.js";
 import signatoriesAuthRoutes from "./signatories/signatoriesRoutes/signatoriesAuth.js";
 import signatoriesRequestRoutes from "./signatories/signatoriesRoutes/signatoriesRequest.js";
 import signatoriesStatusRoutes from "./signatories/signatoriesRoutes/signatoriesStatus.js";
-import superAdminAuthRoutes from "./superAdmin/superadminRoutes/superadminAuth.js";
-import superAdminRequestRoutes from "./superAdmin/superadminRoutes/superadminRequest.js";
-import superAdminStatusRoutes from "./superAdmin/superadminRoutes/superadminStatus.js";
+import superAdminAuthRoutes from "./superadmin/superadminRoutes/superadminAuth.js";
+import superAdminRequestRoutes from "./superadmin/superadminRoutes/superadminRequest.js";
+import superAdminStatusRoutes from "./superadmin/superadminRoutes/superadminStatus.js";
 import authRoutes from "./userRoutes/auth.js";
 import requestRoutes from "./userRoutes/requests.js";
 import usersRoutes from "./userRoutes/users.js";
@@ -17,7 +17,7 @@ import statusRoutes from "./userRoutes/status.js";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import session from "express-session";
-
+const port = process.env.PORT || 3001;
 const app = express();
 //middlewares
 app.use(express.json({ limit: "50mb" }));
@@ -129,6 +129,6 @@ app.use(
 );
 
 // end of routes
-app.listen(3001, () => {
-  console.log("app is listining");
+app.listen(port || 3001, () => {
+  console.log(`app is listining at https:${port}`);
 });
