@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./requests.css";
 import Container from "../../components/container/Container";
-import axios from "axios";
 import SoloPage from "../../components/solopage/SoloPage";
 import { Box } from "@mui/material";
 import { CgClose } from "react-icons/cg";
 import HDprofile from "../../components/HDprofile/HDprofile";
 import { useLocation } from "react-router-dom";
-import { axiosInstance, AxiosInstance } from "../../config";
+import { axiosInstance} from "../../config";
 // import { Carousel } from "react-responsive-carousel";
 // import { BsCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
 export default function Requests() {

@@ -8,6 +8,7 @@ import { GoUnverified } from "react-icons/go";
 import Chart from "../../components/charts/Chart";
 import { AuthContext } from "../../components/context/authContext";
 import Widget from "../../components/widgets/Widget";
+import { axiosInstance } from "../../config";
 
 import axios from "axios";
 import SoloPage from "../../components/solopage/SoloPage";
@@ -65,7 +66,7 @@ export default function Stats() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
+        const res = await axiosInstance.get(
           "http://localhost:3001/api/status/pending",
           {
             userID: currentUser?.User_ID || 0,
@@ -77,7 +78,7 @@ export default function Stats() {
       }
 
       try {
-        const res = await axios.post(
+        const res = await axiosInstance.post(
           "http://localhost:3001/api/status/months",
           {
             userID: currentUser.User_ID,
