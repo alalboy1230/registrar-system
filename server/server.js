@@ -7,7 +7,6 @@ import adminStatusRoutes from "../server/admin/adminRoutes/adminStatus.js";
 import signatoriesAuthRoutes from "./signatories/signatoriesRoutes/signatoriesAuth.js";
 import signatoriesRequestRoutes from "./signatories/signatoriesRoutes/signatoriesRequest.js";
 import signatoriesStatusRoutes from "./signatories/signatoriesRoutes/signatoriesStatus.js";
-
 import superAdminAuthRoutes from "./superAdmin/superadminRoutes/superadminAuth.js";
 import superAdminRequestRoutes from "./superAdmin/superadminRoutes/superadminRequest.js";
 import superAdminStatusRoutes from "./superAdmin/superadminRoutes/superadminStatus.js";
@@ -112,8 +111,6 @@ app.use(
   signatoriesSessionMiddleware,
   signatoriesStatusRoutes
 );
-
-
 
 app.use(
   "/api/superadmin/auth",
