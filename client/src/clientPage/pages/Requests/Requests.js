@@ -74,21 +74,21 @@ export default function Requests() {
     const fetchData = async () => {
       try {
         const res1 = await axiosInstance.get(
-          "http://localhost:3001/api/request/allrequest"
+          "/request/allrequest"
         );
         setValidateCFRD(res1.data);
 
         const res2 = await axiosInstance.get(
-          "http://localhost:3001/api/request/getRequestHd"
+          "/request/getRequestHd"
         );
         setUserRequestHd(res2.data);
         const res4 = await axiosInstance.get(
-          "http://localhost:3001/api/request/getRequestValidating"
+          "/request/getRequestValidating"
         );
         setRequestCFRD(res4.data);
 
         const res6 = await axiosInstance.get(
-          "http://localhost:3001/api/request/getRequestHDValidating"
+          "/request/getRequestHDValidating"
         );
         setRequestHD(res6.data);
       } catch (err) {
